@@ -9,7 +9,7 @@
 #
 ## batch shell 추가 (예제)
 
-### batch.sh (1분에 3번 작동)
+### batch.sh (.jar 실행)
 
 ```shell
 # execute to batch.jar
@@ -27,7 +27,7 @@
 
 
 
-## crontab에 추가 (예제)
+## crontab에 추가 (자정마다 batch.sh 실행)
 ```shell
 #!/bin/bash
 0 0 * * * sh /Users/[경로]/R.LOG-Batch/src/main/shell/batch.sh
