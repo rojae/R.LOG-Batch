@@ -12,20 +12,16 @@
 ### batch.sh (1분에 3번 작동)
 
 ```shell
- #!/usr/bin/vi
- 
- SLEEP_SECOND=20
+# execute to batch.jar
 
  function task {
      echo =================================== DEMON START ===================================
      echo ============================== $(date "+%Y-%m-%d %T") ===================================
 }
 
-for i in $(seq -s " " 1 ${SLEEP_SECOND} 60);do
-    task > /Users/[경로]/batch.log
-    java -jar /Users/[경로]/batch.jar?date=$(date "+%Y-%m-%d %T") > /Users/[경로]/batch.log
-    sleep ${SLEEP_SECOND};
- done
+    task >> /Users/rojae/[경로]/logs/batch-$(date "+%Y%m%d").log
+    java -jar /Users/rojae/[경로]/batch-0.0.1.jar date=$(date "+%s") >> /Users/rojae/[경로]/logs/batch-$(date "+%Y%m%d").log
+
 ```
 
 
@@ -34,5 +30,5 @@ for i in $(seq -s " " 1 ${SLEEP_SECOND} 60);do
 ## crontab에 추가 (예제)
 ```shell
 #!/bin/bash
-00 3 * * * sh /Users/[경로]/batch.sh
+0 0 * * * sh /Users/[경로]/R.LOG-Batch/src/main/shell/batch.sh
 ```
