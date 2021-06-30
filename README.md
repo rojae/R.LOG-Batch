@@ -1,4 +1,6 @@
 # R.LOG Batch Program
+- R.LOG 배치 프로그램 개발
+  - https://rlog.or.kr/index
 - shell 사용
 - crontab 사용
 
